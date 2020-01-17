@@ -1,24 +1,9 @@
-#!/usr/bin/env Rscript
-#
-# Copyright 2015 Google Inc. All rights reserved.
-# 
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-# 
-#     http://www.apache.org/licenses/LICENSE-2.0
-# 
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
 source('../data/gen_counts.R')
 
 # Usage:
 #
-# $ ./gen_true_values.R exp 100 10000 1 foo.csv
+# $ ./gen_true_values.R exp 100  50000 1 1 foo_100_50000_exp.csv
 #
 # Inputs:
 #   distribution name
@@ -50,7 +35,7 @@ GenerateTrueValues <- function(distr, distr_range, num_clients,
 
   # Reported values are strings, so prefix integers "v". Even slower than
   # shuffling.
-  values <- sprintf("%d", value_ints)
+  values <- sprintf("v%d", value_ints)
 
   # e.g. [1 1 2 2 3 3] if num_clients is 3 and reports_per_client is 2
   client_ints <- rep(1:num_clients, each = reports_per_client)
