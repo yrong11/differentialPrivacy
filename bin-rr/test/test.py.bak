@@ -1,5 +1,4 @@
 import struct
-#test
 def bit_string(irr, num_bloombits):
   """Like bin(), but uses leading zeroes, and no '0b'."""
   s = ''
