@@ -1,5 +1,2 @@
-<<<<<<< HEAD
-insert a 
-=======
+insert a
 insert1
->>>>>>> commit_2
